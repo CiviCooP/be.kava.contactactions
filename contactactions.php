@@ -16,8 +16,8 @@ function contactactions_civicrm_summaryActions(&$actions, $contactID) {
   $addresses = civicrm_api3('Address', 'get', $params);
 
   if ($addresses['count'] > 0) {
-    $formattedAddress = $addresses[values][0]['street_address'];
-    $formattedAddress .= $addresses[values][0]['supplemental_address_1'];
+    $formattedAddress = $addresses['values'][0]['street_address'];
+    $formattedAddress .= $addresses['values'][0]['supplemental_address_1'];
   }
 
   $actions['otherActions']['printAddressLabel'] = array(

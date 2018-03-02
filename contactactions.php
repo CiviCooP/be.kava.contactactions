@@ -9,7 +9,7 @@ function contactactions_civicrm_summaryActions(&$actions, $contactID) {
 
   // lookup the primary address
   $params = array(
-    'id' => $contactID,
+    'contact_id' => $contactID,
     'is_primary' => 1,
     'sequential' => 1,
   );
@@ -20,8 +20,8 @@ function contactactions_civicrm_summaryActions(&$actions, $contactID) {
     $formattedAddress .= $addresses['values'][0]['supplemental_address_1'];
   }
 
-  $actions['otherActions']['printAddressLabel'] = array(
-    'title' => 'Print adres',
+  $actions['printAddressLabel'] = array(
+    'title' => 'Print adreslabel',
     'weight' => 999,
     'ref' => 'print-address-label',
     'key' => 'printAddressLabel',
